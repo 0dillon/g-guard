@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Blocked</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    main { max-width: 520px; margin: 8vh auto; padding: 0 16px; text-align: center; }
+    .big { font-size: 56px; }
+    video, canvas { display: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="big">🛑</div>
+    <h1>This site is blocked</h1>
+    <p class="muted" id="domain"></p>
+    <div class="card" id="status">Recording this attempt…</div>
+    <div class="card stats" id="stats" hidden></div>
+    <div class="card" style="text-align:left">
+      <h3>Get through the next 10 minutes</h3>
+      <ul class="muted">
+        <li>Stand up and leave the room.</li>
+        <li>Do 20 push-ups or take a cold shower.</li>
+        <li>Text or call someone.</li>
+        <li>Go for a walk without your phone.</li>
+      </ul>
+    </div>
+    <button id="away">Take me somewhere safe</button>
+    <video id="video" playsinline muted></video>
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </main>
+  <script type="module" src="block.js"></script>
+</body>
+</html>

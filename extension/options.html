@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Goon Guard settings</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>main { max-width: 560px; margin: 32px auto; padding: 0 16px; }</style>
+</head>
+<body>
+  <main>
+    <h1>Goon Guard</h1>
+    <p class="muted">Block adult sites, keep a streak, and let a friend hold you to it.</p>
+
+    <section class="card">
+      <h3>Server</h3>
+      <label>Server URL</label>
+      <input id="server" placeholder="http://localhost:8787" />
+    </section>
+
+    <section class="card" id="register">
+      <h3>Set up your accountability partner</h3>
+      <label>Your name</label><input id="name" />
+      <label>Your email</label><input id="email" type="email" />
+      <label>Friend's name</label><input id="friendName" />
+      <label>Friend's email</label><input id="friendEmail" type="email" />
+      <label>Penalty per slip (USD, 0 to turn off)</label><input id="penalty" type="number" min="0" max="100" value="5" />
+      <label><input id="photo" type="checkbox" /> Send a webcam photo with each alert. Only turn this on if your friend agreed to get photos.</label>
+      <button id="registerBtn">Start</button>
+      <p id="regMsg"></p>
+    </section>
+
+    <section class="card" id="account" hidden>
+      <h3>Your account</h3>
+      <p class="muted" id="acctInfo"></p>
+      <label><input id="photoToggle" type="checkbox" /> Send a webcam photo with alerts</label>
+      <label>Penalty per slip (USD). Your friend is told if you lower it.</label>
+      <input id="penaltyEdit" type="number" min="0" max="100" />
+      <button id="saveAcct">Save</button>
+      <button class="ghost" id="cardBtn">Add or replace card (Stripe)</button>
+      <button class="ghost" id="webBtn">Open web dashboard</button>
+      <p id="acctMsg"></p>
+    </section>
+
+    <section class="card" id="groups" hidden>
+      <h3>Leaderboard groups</h3>
+      <p class="muted">Groups only share your name, streak, badge and points.</p>
+      <label>Create a group</label>
+      <input id="groupName" placeholder="Group name" />
+      <button id="createGroup">Create</button>
+      <label>Join with a code</label>
+      <input id="groupCode" placeholder="ABCD1234" />
+      <button id="joinGroup">Join</button>
+      <p id="groupMsg"></p>
+      <ul id="groupList" class="muted"></ul>
+    </section>
+
+    <section class="card">
+      <h3>Custom blocklist</h3>
+      <label>Extra domains to block (one per line)</label>
+      <textarea id="custom" rows="4"></textarea>
+      <button id="saveCustom">Save</button>
+      <span id="customMsg" class="ok"></span>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
